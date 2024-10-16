@@ -58,16 +58,16 @@ This is a simple Task Manager application built with Laravel (backend) and Vue.j
    ```bash
    npm run dev
 
-10. Serve the application:  
+10. **Serve the Application:**  
    ```bash
    php artisan serve
 
+
 11. Visit http://localhost:8000 to access the Task Manager.
-####
+  
 
 
 ## Usage
-
 - **Task Creation**: Navigate to the "Create New Task" page to add a new task. Fill in the title, description (optional), and submit.
 - **Task Editing**: You can edit any task by clicking the "Edit" button next to the task in the dashboard.
 - **Task Deletion**: Tasks can be deleted by clicking the "Delete" button. A confirmation dialog will appear before deletion.
