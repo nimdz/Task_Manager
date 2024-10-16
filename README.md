@@ -42,7 +42,7 @@ This is a simple Task Manager application built with Laravel (backend) and Vue.j
    DB_CONNECTION=sqlite  
    DB_DATABASE=/full/path/to/database/database.sqlite
 
-   You may create the SQLite database file if it does not exist: 
+You may create the SQLite database file if it does not exist: 
    ```bash 
    touch database/database.sqlite
 
@@ -62,8 +62,7 @@ This is a simple Task Manager application built with Laravel (backend) and Vue.j
    ```bash
    php artisan serve
 
-
-   Visit http://localhost:8000 to access the Task Manager.
+Visit http://localhost:8000 to access the Task Manager.
 
 ## Usage
 
