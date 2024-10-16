@@ -62,4 +62,4 @@ This is a simple Task Manager application built with Laravel (backend) and Vue.j
    ```bash
    php artisan serve
 
-.
+
