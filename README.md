@@ -42,23 +42,23 @@ This is a simple Task Manager application built with Laravel (backend) and Vue.j
    DB_CONNECTION=sqlite  
    DB_DATABASE=/full/path/to/database/database.sqlite
 
-You may create the SQLite database file if it does not exist: 
-   ```bash 
-   touch database/database.sqlite
+6. You may create the SQLite database file if it does not exist: 
+    ```bash 
+    touch database/database.sqlite
 
-6. Generate application key:  
+7. Generate application key:  
    ```bash
    php artisan key:generate
 
-7. Run migrations:  
+8. Run migrations:  
    ```bash
    php artisan migrate
 
-8. Compile frontend assets: 
+9. Compile frontend assets: 
    ```bash
    npm run dev
 
-9. Serve the application:  
+10. Serve the application:  
    ```bash
    php artisan serve
 
