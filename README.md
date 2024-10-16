@@ -62,6 +62,4 @@ This is a simple Task Manager application built with Laravel (backend) and Vue.j
    ```bash
    php artisan serve
 
-11. **Visit the Application:**
-   ```bash
-    Open your browser and go to http://localhost:8000 to access the Task Manager.
+.
