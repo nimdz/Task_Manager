@@ -12,7 +12,7 @@ This is a simple Task Manager application built with Laravel (backend) and Vue.j
 
 - **Backend**: Laravel 10
 - **Frontend**: Vue.js 3
-- **Database**: SQLite (You can switch to MySQL, PostgreSQL, etc.)
+- **Database**: SQLite
 - **Authentication**: Laravel Breeze
 - **HTTP Requests**: Inertia.js for seamless server-client communication
 
