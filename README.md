@@ -51,13 +51,17 @@ This is a simple Task Manager application built with Laravel (backend) and Vue.j
    php artisan key:generate
 
 7. Run migrations:  
+   ```bash
    php artisan migrate
 
-8. Compile frontend assets:  
+8. Compile frontend assets: 
+   ```bash
    npm run dev
 
 9. Serve the application:  
+   ```bash
    php artisan serve
+
 
    Visit http://localhost:8000 to access the Task Manager.
 
