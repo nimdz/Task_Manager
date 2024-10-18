@@ -41,13 +41,13 @@ This is a simple Task Manager application built with Laravel (backend) and Vue.j
 
 Ensure you update the `.env` file with your MySQL credentials:
 
-```dotenv
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=TaskManager
-DB_USERNAME=root
-DB_PASSWORD=
+   ```bash 
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=TaskManager
+   DB_USERNAME=root
+   DB_PASSWORD=
 
 6. You may create the SQLite database file if it does not exist: 
     ```bash 
