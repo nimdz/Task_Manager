@@ -4,23 +4,35 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use App\Repositories\TaskRepository;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+
 
 class TaskController extends Controller
 {
-    use AuthorizesRequests; 
+
+    use AuthorizesRequests;
+
+    protected $taskRepository;
+
+    // Inject the TaskRepository in the constructor
+    public function __construct(TaskRepository $taskRepository)
+    {
+        $this->taskRepository = $taskRepository;
+    }
 
     public function index()
     {
-        // Retrieve tasks for the authenticated user
-        $tasks = Task::where('user_id', Auth::id())->get();
+        // Use repository to fetch paginated tasks for the authenticated user (10 tasks per page)
+        $tasks = $this->taskRepository->getTasksForUserPaginated(10);
 
         return Inertia::render('Tasks/Index', [
-            'tasks' => $tasks,
+            'tasks' => $tasks, // This will now be paginated
         ]);
     }
+
 
     public function create()
     {
@@ -35,12 +47,8 @@ class TaskController extends Controller
             'status' => 'in:pending,completed',
         ]);
 
-        Task::create([
-            'user_id' => Auth::id(),
-            'title' => $request->title,
-            'description' => $request->description,
-            'status' => 'pending', // Default to pending
-        ]);
+        // Use repository to create the task
+        $this->taskRepository->createTask($request->only(['title', 'description', 'status']));
 
         return redirect()->route('dashboard')->with('success', 'Task created successfully!');
     }
@@ -62,15 +70,17 @@ class TaskController extends Controller
             'status' => 'in:pending,completed',
         ]);
 
-        $task->update($request->only(['title', 'description', 'status']));
+        // Use repository to update the task
+        $this->taskRepository->updateTask($task, $request->only(['title', 'description', 'status']));
 
         return redirect()->route('dashboard')->with('success', 'Task updated successfully!');
     }
 
     public function destroy(Task $task)
     {
-        $task->delete();
+        // Use repository to delete the task
+        $this->taskRepository->deleteTask($task);
+
         return redirect()->route('dashboard')->with('success', 'Task deleted successfully');
     }
-    
 }
