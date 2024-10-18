@@ -37,10 +37,17 @@ This is a simple Task Manager application built with Laravel (backend) and Vue.j
    ```bash
    cp .env.example .env
 
-5. Configure your `.env` file with database settings, for SQLite, add:  
-   ```bash
-   DB_CONNECTION=sqlite  
-   DB_DATABASE=/full/path/to/database/database.sqlite
+5.By default, this project is configured to use **MySQL** as the database. 
+
+Ensure you update the `.env` file with your MySQL credentials:
+
+```dotenv
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=TaskManager
+DB_USERNAME=root
+DB_PASSWORD=
 
 6. You may create the SQLite database file if it does not exist: 
     ```bash 
